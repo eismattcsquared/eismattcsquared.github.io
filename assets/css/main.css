@@ -3914,7 +3914,7 @@ body {
 .interface-image {
     width: 70%;
     /* Replace 'pic01.jpg' with your actual headshot/photo */
-    background-image: url('../../images/gallery/Headshot.jpg'); 
+    background-image: url('../../images/gallery/Headshot.jpeg'); 
     background-size: cover;
     background-position: center;
     /* This creates the seamless integration into the black background */
