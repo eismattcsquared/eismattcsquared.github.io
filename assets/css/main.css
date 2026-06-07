@@ -3880,3 +3880,71 @@ input, select, textarea {
 		}
 
 	}
+
+/* =========================================
+   Custom Portfolio Interface
+   ========================================= */
+
+/* Lock the initial scroll and set the page to pure black */
+body {
+    background-color: #000000;
+    margin: 0;
+    overflow-y: hidden; /* Prevents scrolling */
+}
+
+/* The 100% fullscreen container */
+#hero-interface {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Left 30% - The Navigation Menu */
+.interface-menu {
+    width: 30%;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Pushes tabs toward the center */
+    padding-right: 2rem;
+    z-index: 10; /* Keeps menu on top */
+}
+
+/* Right 70% - The seamlessly blended image */
+.interface-image {
+    width: 70%;
+    /* Replace 'pic01.jpg' with your actual headshot/photo */
+    background-image: url('../../images/pic01.jpg'); 
+    background-size: cover;
+    background-position: center;
+    /* This creates the seamless integration into the black background */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%);
+    mask-image: linear-gradient(to right, transparent 0%, black 25%);
+}
+
+/* Styling the subtle buttons */
+.nav-tab {
+    display: block;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4); /* Dimmed state */
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: right;
+    margin: 30px 0;
+    padding: 10px;
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* The hover "Light Up" effect */
+.nav-tab:hover {
+    color: #ffffff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    transform: translateX(-5px); /* Slight nudge to the left on hover */
+}
+
+/* Hides the lower content initially */
+#portfolio-content {
+    display: none; 
+}
