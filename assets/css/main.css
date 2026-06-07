@@ -3925,7 +3925,7 @@ body {
 /* Right 70% - The seamlessly blended image */
 .interface-image {
     width: 70%;
-    background-image: url('../../images/gallery/Headshot.jpg'); 
+    background-image: url('../../images/gallery/Headshot.jpeg'); 
     background-size: cover;
     background-position: center;
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%);
