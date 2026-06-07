@@ -3959,3 +3959,64 @@ body {
 #portfolio-content {
     display: none; 
 }
+
+/* =========================================
+   Portfolio Content & Animations
+   ========================================= */
+
+#portfolio-content {
+    background-color: #0b0b0b; /* Slightly off-black to contrast the hero section */
+    padding: 5em 2em;
+    min-height: 100vh;
+}
+
+/* Hide all tracks by default so they can be toggled by JS */
+.portfolio-track {
+    display: none; 
+    max-width: 900px;
+    margin: 0 auto; /* Centers the content */
+}
+
+/* Individual Project Card Styling */
+.project-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 80px;
+    background: #111111;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-img {
+    width: 40%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.project-info {
+    width: 60%;
+}
+
+.contact-bar {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 50px;
+}
+
+/* --- The Scroll Animation CSS --- */
+
+/* State 1: Hidden and pushed down 50 pixels */
+.hidden-element {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* State 2: Visible and back in its normal position */
+.visible-element {
+    opacity: 1;
+    transform: translateY(0);
+}
