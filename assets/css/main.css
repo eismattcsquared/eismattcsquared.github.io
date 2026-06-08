@@ -3918,7 +3918,7 @@ body {
 /* 2. Shrink the invisible void and slide the image over */
 .interface-image {
     width: 50%;
-    background-image: url('../../images/gallery/Headshot.jpg'); 
+    background-image: url('../../images/gallery/Headshot.jpeg'); 
     background-size: cover;
     /* Slides the center of your photo closer to the text on the left */
     background-position: 25% center; 
