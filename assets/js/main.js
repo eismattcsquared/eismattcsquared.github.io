@@ -206,3 +206,59 @@
 					});
 
 })(jQuery);
+
+/* =========================================
+   Custom Portfolio Logic
+   ========================================= */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // 1. Element Setup
+    const tabs = document.querySelectorAll('.nav-tab');
+    const tracks = document.querySelectorAll('.portfolio-track');
+    const portfolioContent = document.getElementById('portfolio-content');
+
+    // 2. Tab Clicking Logic
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            
+            // A. Unlock scrolling on both html and body
+            document.documentElement.style.overflowY = 'auto';
+            document.body.style.overflowY = 'auto';
+
+            // B. Unhide the main content container
+            portfolioContent.style.display = 'block';
+
+            // C. Hide all individual tracks first
+            tracks.forEach(track => {
+                track.style.display = 'none';
+            });
+
+            // D. Find the specific track matching the button and show it
+            const targetId = tab.getAttribute('data-target');
+            document.getElementById(targetId).style.display = 'block';
+
+            // E. Smoothly scroll down to the content
+            portfolioContent.scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        });
+    });
+
+    // 3. Scroll Animation Logic (The Fade-In Effect)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible-element');
+            } else {
+                entry.target.classList.remove('visible-element');
+            }
+        });
+    }, { threshold: 0.15 }); 
+
+    // Attach the observer to all hidden elements
+    document.querySelectorAll('.hidden-element').forEach(element => {
+        observer.observe(element);
+    });
+
+});
