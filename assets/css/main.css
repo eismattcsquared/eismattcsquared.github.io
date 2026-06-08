@@ -3904,14 +3904,24 @@ body {
 
 /* The 100% fullscreen container */
 #hero-interface {
-    display: flex;
+    display: flex !important; /* Forces the side-by-side layout */
     height: 100vh;
     width: 100vw;
     background-color: #000000;
-    padding: 0 !important; /* Overrides the template's hidden padding */
+    padding: 0 !important; 
     margin: 0 !important;
 }
 
+.interface-image {
+    width: 50%;
+    background-image: url('../../images/gallery/Headshot.jpeg'); 
+    background-size: cover;
+    /* Pins your face to the right side so it never clips off */
+    background-position: center right; 
+    /* A slightly smoother fade */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%);
+    mask-image: linear-gradient(to right, transparent 0%, black 25%);
+}
 .interface-menu {
     width: 50%;
     background-color: #000000;
@@ -3923,16 +3933,6 @@ body {
     z-index: 10; 
 }
 
-.interface-image {
-    width: 50%;
-    background-image: url('../../images/gallery/Headshot.jpeg'); 
-    background-size: cover;
-    /* Slides the center of your photo closer to the text on the left */
-    background-position: 25% center; 
-    /* Shrinks the gradient so it only fades the first 15% of the edge */
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%);
-    mask-image: linear-gradient(to right, transparent 0%, black 15%);
-}
 /* Updated Button Styling */
 .nav-tab {
     display: block;
