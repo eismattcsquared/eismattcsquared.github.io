@@ -3897,7 +3897,7 @@ body, #wrapper {
 }
 
 /* Lock the initial scroll */
-body {
+html, body {
     margin: 0;
     overflow-y: hidden; 
 }
