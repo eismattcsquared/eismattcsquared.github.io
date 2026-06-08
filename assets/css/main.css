@@ -3926,7 +3926,7 @@ body {
 /* Right side - Adjusted to 50% */
 .interface-image {
     width: 50%;
-    background-image: url('../../images/gallery/Headshot.jpg'); 
+    background-image: url('../../images/gallery/Headshot.jpeg'); 
     background-size: cover;
     background-position: center;
     /* Pushed the fade further right to account for the new width */
