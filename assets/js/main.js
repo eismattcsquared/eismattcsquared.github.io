@@ -208,13 +208,12 @@
 })(jQuery);
 
 /* =========================================
-   Custom Portfolio Logic
+   Custom Portfolio Logic - MASTER BLOCK
    ========================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
-	document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. Force the browser to forget past scrolls and start at the top
+    // 1. Force top scroll on reload
     if ('scrollRestoration' in history) {
         history.scrollRestoration = 'manual';
     }
@@ -222,40 +221,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Element Setup
     const tabs = document.querySelectorAll('.nav-tab');
-
-    // 1. Element Setup
-    const tabs = document.querySelectorAll('.nav-tab');
     const tracks = document.querySelectorAll('.portfolio-track');
     const portfolioContent = document.getElementById('portfolio-content');
 
-    // 2. Tab Clicking Logic
+    // 3. Tab Clicking Logic
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            
-            // A. Unlock scrolling on both html and body
+            // Unlock scrolling
             document.documentElement.style.overflowY = 'auto';
             document.body.style.overflowY = 'auto';
 
-            // B. Unhide the main content container
+            // Unhide the main container
             portfolioContent.style.display = 'block';
 
-            // C. Hide all individual tracks first
+            // Hide all tracks
             tracks.forEach(track => {
                 track.style.display = 'none';
             });
 
-            // D. Find the specific track matching the button and show it
+            // Show the clicked track
             const targetId = tab.getAttribute('data-target');
             document.getElementById(targetId).style.display = 'block';
 
-            // E. Smoothly scroll down to the content
-            portfolioContent.scrollIntoView({ 
-                behavior: 'smooth' 
-            });
+            // Scroll down
+            portfolioContent.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-    // 3. Scroll Animation Logic (The Fade-In Effect)
+    // 4. Scroll Animation Logic
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -266,7 +259,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.15 }); 
 
-    // Attach the observer to all hidden elements
     document.querySelectorAll('.hidden-element').forEach(element => {
         observer.observe(element);
     });
