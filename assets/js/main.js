@@ -212,6 +212,16 @@
    ========================================= */
 
 document.addEventListener('DOMContentLoaded', () => {
+	document.addEventListener('DOMContentLoaded', () => {
+
+    // 1. Force the browser to forget past scrolls and start at the top
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+
+    // 2. Element Setup
+    const tabs = document.querySelectorAll('.nav-tab');
 
     // 1. Element Setup
     const tabs = document.querySelectorAll('.nav-tab');
