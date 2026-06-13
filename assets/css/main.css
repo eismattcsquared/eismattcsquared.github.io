@@ -3904,14 +3904,14 @@ html, body {
     display: flex !important; 
     height: 100vh;
     width: 100vw;
-    background-color: #355C7D; 
+    background-color: #374356; 
     padding: 0 !important; 
     margin: 0 !important;
 }
 
 .interface-menu {
     width: 50%;
-    background-color: #355C7D; 
+    background-color: #374356; 
     display: flex;
     flex-direction: column; 
     align-items: flex-end; 
@@ -3952,7 +3952,7 @@ html, body {
 }
 
 #portfolio-content {
-    background: linear-gradient(to bottom, #355C7D 0%, #6C5B7B 25%, #C06C84 50%, #F67280 75%, #F8B195 100%);
+    background: linear-gradient(to bottom, #374356 0%, #6C5B7B 25%, #C06C84 50%, #F67280 75%, #F8B195 100%);
     padding: 5em 2em;
     min-height: 100vh;
     display: none; 
@@ -4018,7 +4018,7 @@ html, body {
 }
 
 .contact-bar p {
-    color: #355C7D; 
+    color: #374356; 
     margin: 0;
     font-size: 1.2rem;
 }
