@@ -3944,7 +3944,7 @@ html, body {
 
 .interface-image {
     width: 50%;
-    background-image: url('../../images/gallery/Headshot.jpg'); 
+    background-image: url('../../images/gallery/Headshot.jpeg'); 
     background-size: cover;
     background-position: center right; 
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%);
