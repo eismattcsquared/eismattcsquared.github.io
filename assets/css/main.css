@@ -3885,9 +3885,9 @@ input, select, textarea {
    Custom Portfolio Interface (UPDATED)
    ========================================= */
 
-/* 1. Nuke the template's default background and lines completely */
+/* 1. Base Backgrounds - Updated to Dark Blue */
 body, #wrapper {
-    background-color: #000000 !important;
+    background-color: #355C7D !important;
     background-image: none !important; 
 }
 
@@ -3904,12 +3904,47 @@ html, body {
 
 /* The 100% fullscreen container */
 #hero-interface {
-    display: flex !important; /* Forces the side-by-side layout */
+    display: flex !important; 
     height: 100vh;
     width: 100vw;
-    background-color: #000000;
+    background-color: #355C7D; /* Palette Dark Blue */
     padding: 0 !important; 
     margin: 0 !important;
+}
+
+.interface-menu {
+    width: 50%;
+    background-color: #355C7D; /* Palette Dark Blue */
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end; 
+    justify-content: center; 
+    padding-right: 2rem; 
+    z-index: 10; 
+}
+
+/* Menu Buttons */
+.nav-tab {
+    display: block;
+    background: transparent !important; 
+    border: none !important; 
+    box-shadow: none !important; 
+    color: rgba(255, 255, 255, 0.6) !important; 
+    font-size: 1.2rem; 
+    font-weight: bold;
+    text-align: right;
+    margin: 15px 0;
+    padding: 10px;
+    cursor: pointer;
+    white-space: nowrap; 
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* The hover "Light Up" effect using Palette Peach */
+.nav-tab:hover {
+    color: #F8B195 !important; 
+    text-shadow: 0 0 15px rgba(248, 177, 149, 0.6) !important;
+    transform: translateX(-5px); 
 }
 
 .interface-image {
@@ -3922,71 +3957,35 @@ html, body {
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 25%);
     mask-image: linear-gradient(to right, transparent 0%, black 25%);
 }
-.interface-menu {
-    width: 50%;
-    background-color: #000000;
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-end; 
-    justify-content: center; 
-    padding-right: 2rem; /* Reduced slightly to give text more room */
-    z-index: 10; 
-}
-
-/* Updated Button Styling */
-.nav-tab {
-    display: block;
-    background: transparent !important; 
-    border: none !important; 
-    box-shadow: none !important; 
-    color: rgba(255, 255, 255, 0.6) !important; 
-    font-size: 1.2rem; /* Scaled down slightly for safety */
-    font-weight: bold;
-    text-align: right;
-    margin: 15px 0;
-    padding: 10px;
-    cursor: pointer;
-    white-space: nowrap; /* STRICT RULE: Never wrap or chop the text */
-    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
-}
-/* The hover "Light Up" effect */
-.nav-tab:hover {
-    color: #ffffff !important;
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8) !important;
-    transform: translateX(-5px); 
-}
-
-/* Hides the lower content initially */
-#portfolio-content {
-    display: none; 
-}
 
 /* =========================================
-   Portfolio Content & Animations
+   Portfolio Content & Colors
    ========================================= */
 
 #portfolio-content {
-    background-color: #0b0b0b; /* Slightly off-black to contrast the hero section */
+    /* The Palette Sunset Gradient */
+    background: linear-gradient(to bottom, #355C7D 0%, #6C5B7B 25%, #C06C84 50%, #F67280 75%, #F8B195 100%);
     padding: 5em 2em;
     min-height: 100vh;
+    display: none; /* Keeps it hidden initially */
 }
 
-/* Hide all tracks by default so they can be toggled by JS */
 .portfolio-track {
     display: none; 
     max-width: 900px;
-    margin: 0 auto; /* Centers the content */
+    margin: 0 auto; 
 }
 
-/* Individual Project Card Styling */
+/* Individual Project Card Styling - Dark Frosted Glass */
 .project-card {
     display: flex;
     align-items: center;
     gap: 30px;
     margin-bottom: 80px;
-    background: #111111;
+    background: rgba(20, 25, 35, 0.75); /* Dark translucent background */
+    backdrop-filter: blur(8px); /* Blurs the gradient behind it */
     padding: 30px;
-    border-radius: 10px;
+    border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -4000,13 +3999,57 @@ html, body {
     width: 60%;
 }
 
+/* Coloring the Text & Buttons */
+.project-info h2 {
+    color: #F8B195 !important; /* Palette Peach */
+    margin-bottom: 0.5em;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.5); /* Helps pop off the background */
+}
+
+.project-info p {
+    color: rgba(255, 255, 255, 0.9); /* Off-white for readability */
+}
+
+.project-info .button.primary {
+    background-color: #C06C84 !important; /* Palette Mauve */
+    color: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.project-info .button.primary:hover {
+    background-color: #F67280 !important; /* Palette Pink hover */
+}
+
+/* Contact Bar - Grounded at the bottom */
 .contact-bar {
     text-align: center;
     padding: 40px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
     margin-top: 50px;
+    background-color: #355C7D; /* Brings the Dark Blue back for grounding */
+    border-radius: 12px;
+    border: 2px solid #C06C84; /* Palette Mauve border */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
+.contact-bar p {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.contact-bar a {
+    color: #F8B195 !important; /* Palette Peach links */
+    font-weight: bold;
+    text-decoration: none;
+    border-bottom: 2px dotted #F8B195;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-bar a:hover {
+    color: #F67280 !important; /* Palette Pink hover */
+    border-bottom-color: #F67280;
+}
 /* --- The Scroll Animation CSS --- */
 
 /* State 1: Hidden and pushed down 50 pixels */
