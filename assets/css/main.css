@@ -3889,6 +3889,7 @@ input, select, textarea {
 body, #wrapper {
     background-color: #355C7D !important;
     background-image: none !important; 
+    padding: 0 !important; /* Kills the giant bottom void */
 }
 
 /* Kill any hidden template pattern overlays */
