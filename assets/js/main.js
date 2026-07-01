@@ -262,5 +262,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.hidden-element').forEach(element => {
         observer.observe(element);
     });
+	// 5. Read More Button Logic
+    const readMoreBtns = document.querySelectorAll('.read-more-btn');
+    
+    readMoreBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault(); // Completely stops the page from jumping
+            
+            // Find the specific extra-details div right above this button
+            const details = this.previousElementSibling;
+            
+            // Toggle the box open or closed
+            if (details.style.display === 'block') {
+                details.style.display = 'none';
+                this.textContent = 'View Details'; // Change text back
+            } else {
+                details.style.display = 'block';
+                this.textContent = 'Hide Details'; // Change text when open
+            }
+        });
+    });
 
 });
