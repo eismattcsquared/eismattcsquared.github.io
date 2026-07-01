@@ -4005,7 +4005,7 @@ html, body {
 
 .extra-details p {
     font-size: 0.9rem; /* Slightly smaller text to differentiate from the summary */
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.7);
 }
 
 .project-info .button.primary {
