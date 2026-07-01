@@ -3996,6 +3996,18 @@ html, body {
     color: rgba(255, 255, 255, 0.9); 
 }
 
+.extra-details {
+    display: none; /* Hidden by default */
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2); /* A subtle divider line */
+}
+
+.extra-details p {
+    font-size: 0.9rem; /* Slightly smaller text to differentiate from the summary */
+    color: rgba(255, 255, 255, 0.7);
+}
+
 .project-info .button.primary {
     background-color: #C06C84 !important; 
     color: #ffffff !important;
