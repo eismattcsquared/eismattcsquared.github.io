@@ -248,21 +248,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. Scroll Animation Logic
-    const observer = new IntersectionObserver((entries) => {
+// 4. Scroll Animation Logic (One-Way Trigger)
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // 1. Fade the element in
                 entry.target.classList.add('visible-element');
-            } else {
-                entry.target.classList.remove('visible-element');
+                
+                // 2. Stop watching the element so it never fades back out
+                observer.unobserve(entry.target);
             }
+            // Notice we completely deleted the 'else' block!
         });
     }, { threshold: 0.15 }); 
 
+    // Attach the observer to all hidden elements
     document.querySelectorAll('.hidden-element').forEach(element => {
         observer.observe(element);
-    });
-	// 5. Read More Button Logic
+    });	// 5. Read More Button Logic
     const readMoreBtns = document.querySelectorAll('.read-more-btn');
     
     readMoreBtns.forEach(btn => {
