@@ -224,7 +224,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const tracks = document.querySelectorAll('.portfolio-track');
     const portfolioContent = document.getElementById('portfolio-content');
 
-    // 3. Tab Clicking Logic
+    // 3. Scroll Animation Logic (Moved UP so the tabs can use it)
+    const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible-element');
+                obs.unobserve(entry.target); // Stop watching after it fades in
+            }
+        });
+    }, { threshold: 0.15 }); 
+
+    // Initial attachment on page load
+    document.querySelectorAll('.hidden-element').forEach(element => {
+        observer.observe(element);
+    });
+
+    // 4. Tab Clicking Logic
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
             // Unlock scrolling
@@ -243,45 +258,33 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = tab.getAttribute('data-target');
             document.getElementById(targetId).style.display = 'block';
 
+            // --- NEW: THE RESET ENGINE ---
+            // Strip the visible class and force the observer to watch everything again
+            document.querySelectorAll('.hidden-element').forEach(element => {
+                element.classList.remove('visible-element');
+                observer.observe(element); 
+            });
+
             // Scroll down
             portfolioContent.scrollIntoView({ behavior: 'smooth' });
         });
     });
 
-// 4. Scroll Animation Logic (One-Way Trigger)
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // 1. Fade the element in
-                entry.target.classList.add('visible-element');
-                
-                // 2. Stop watching the element so it never fades back out
-                observer.unobserve(entry.target);
-            }
-            // Notice we completely deleted the 'else' block!
-        });
-    }, { threshold: 0.15 }); 
-
-    // Attach the observer to all hidden elements
-    document.querySelectorAll('.hidden-element').forEach(element => {
-        observer.observe(element);
-    });	// 5. Read More Button Logic
+    // 5. Read More Button Logic
     const readMoreBtns = document.querySelectorAll('.read-more-btn');
     
     readMoreBtns.forEach(btn => {
         btn.addEventListener('click', function(e) {
-            e.preventDefault(); // Completely stops the page from jumping
+            e.preventDefault(); 
             
-            // Find the specific extra-details div right above this button
             const details = this.previousElementSibling;
             
-            // Toggle the box open or closed
             if (details.style.display === 'block') {
                 details.style.display = 'none';
-                this.textContent = 'View Details'; // Change text back
+                this.textContent = 'View Details'; 
             } else {
                 details.style.display = 'block';
-                this.textContent = 'Hide Details'; // Change text when open
+                this.textContent = 'Hide Details'; 
             }
         });
     });
