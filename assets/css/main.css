@@ -4008,11 +4008,16 @@ html, body {
     color: rgba(255, 255, 255, 0.7);
 }
 
-/* Color the lists inside the extra details */
+/* Color the lists inside the extra details and fix the top gap */
 .extra-details ol, 
-.extra-details ul, 
+.extra-details ul {
+    color: rgba(255, 255, 255, 0.7); 
+    font-size: 0.9rem;
+    margin-top: 0.25rem; /* This pulls the list up tightly against the text above it */
+}
+
 .extra-details li {
-    color: rgba(255, 255, 255, 0.7); /* Matches your off-white paragraph text */
+    color: rgba(255, 255, 255, 0.7); 
     font-size: 0.9rem;
 }
 
