@@ -4013,7 +4013,7 @@ html, body {
 .extra-details ul {
     color: rgba(255, 255, 255, 0.7); 
     font-size: 0.9rem;
-    margin-top: 0.25rem; /* This pulls the list up tightly against the text above it */
+    margin-top: 0rem; /* This pulls the list up tightly against the text above it */
 }
 
 .extra-details li {
