@@ -3925,7 +3925,7 @@ html, body {
     background: transparent !important; 
     border: none !important; 
     box-shadow: none !important; 
-    color: rgba(255, 255, 255, 0.6) !important; 
+    color: rgba(255, 255, 255, 0.95) !important; 
     font-size: 1.2rem; 
     font-weight: bold;
     text-align: right;
@@ -4060,6 +4060,8 @@ html, body {
     text-decoration: none;
     border-bottom: 2px dotted #C06C84;
     transition: color 0.3s ease, border-color 0.3s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .contact-bar a:hover {
