@@ -4011,7 +4011,7 @@ html, body {
 
 .extra-details ol, 
 .extra-details ul {
-    color: rgba(255, 255, 255, 0.90) !important; 
+    color: rgba(255, 255, 255, 0.85) !important; 
     font-size: 0.9rem !important;
     margin-top: 0 !important;
 }
