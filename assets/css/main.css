@@ -4004,14 +4004,14 @@ html, body {
 }
 
 .extra-details p {
-    color: rgba(255, 255, 255, 0.7) !important; 
+    color: rgba(255, 255, 255, 0.85) !important; 
     font-size: 0.9rem !important;
     margin-bottom: 0.25rem !important;
 }
 
 .extra-details ol, 
 .extra-details ul {
-    color: rgba(255, 255, 255, 0.7) !important; 
+    color: rgba(255, 255, 255, 0.85) !important; 
     font-size: 0.9rem !important;
     margin-top: 0 !important;
 }
