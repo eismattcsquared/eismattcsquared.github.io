@@ -4077,3 +4077,44 @@ html, body {
     opacity: 1;
     transform: translateY(0);
 }
+
+/* =========================================
+   Mobile Responsiveness (Screens under 768px)
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+    
+    /* 1. Hide the Hero Image */
+    .interface-image {
+        display: none !important;
+    }
+
+    /* 2. Expand the Menu to 100% width and center it */
+    .interface-menu {
+        width: 100%;
+        padding-right: 0; /* Remove the desktop right-padding */
+        align-items: center; /* Center the buttons horizontally */
+    }
+
+    .nav-tab {
+        text-align: center; /* Center the button text */
+    }
+
+    /* 3. Stack the Project Cards vertically */
+    .project-card {
+        flex-direction: column; /* This moves the image to the top */
+        padding: 20px; /* Slightly tighter padding for small screens */
+        gap: 15px;
+    }
+
+    /* Make both the image and the text take up the full width */
+    .project-img,
+    .project-info {
+        width: 100%;
+    }
+
+    /* Optional: Cap the image height so it doesn't consume the entire phone screen */
+    .project-img {
+        max-height: 250px; 
+    }
+}
