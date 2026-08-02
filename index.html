@@ -21,11 +21,14 @@
 	            <span class="name">Matthew Williams</span>
 	            <span class="major">Biomedical Engineering</span>
 	        </div>
-	        <div class="top-bar-right">
-	            <!-- Uses your pink/red palette color via CSS -->
-	            <a href="mailto:matthew.williams.eng@gmail.com" class="button connect-btn">Connect Now</a>
-	        </div>
-	    </div>
+			<div class="top-bar-right">
+			    <!-- Desktop Button: Copies to Clipboard -->
+			    <a href="#!" onclick="navigator.clipboard.writeText('matthew.williams.eng@gmail.com'); alert('Email address copied to clipboard!');" class="button connect-btn desktop-btn">Connect Now</a>
+			    
+			    <!-- Mobile Button: Opens Native Mail App -->
+			    <a href="mailto:matthew.williams.eng@gmail.com" class="button connect-btn mobile-btn">Connect Now</a>
+			</div>	    
+		</div>
 	
 	    <section id="hero-interface">
 	        <div class="interface-menu">
