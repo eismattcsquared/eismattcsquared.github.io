@@ -3951,6 +3951,61 @@ html, body {
     mask-image: linear-gradient(to right, transparent 0%, black 25%);
 }
 
+
+
+
+/* =========================================
+   Top Navigation Bar
+   ========================================= */
+#top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(53, 92, 125, 0.95); /* Deep Blue Frosted Glass */
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    z-index: 9999; /* Forces it to hover above absolutely everything */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.top-bar-left .name {
+    color: #F8B195; /* Palette Peach */
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-right: 15px;
+}
+
+.top-bar-left .major {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    border-left: 2px solid #6C5B7B; /* Vertical divider line */
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+/* The Red-Most "Connect Now" Button */
+.connect-btn {
+    background-color: #F67280 !important; 
+    color: #ffffff !important;
+    height: 2.5rem !important; /* Slightly smaller for the top bar */
+    line-height: 2.5rem !important;
+    padding: 0 1.5rem !important;
+    border-radius: 20px !important; /* Makes it a modern pill shape */
+    box-shadow: none !important;
+}
+
+.connect-btn:hover {
+    background-color: #C06C84 !important; /* Fades to Mauve on hover */
+}
+
+
+
+
 #portfolio-content {
     background: linear-gradient(to bottom, #374356 0%, #6C5B7B 25%, #C06C84 50%, #F67280 75%, #F8B195 100%);
     padding: 5em 2em;
@@ -4081,42 +4136,71 @@ html, body {
 }
 
 /* =========================================
-   Mobile Responsiveness (Screens under 768px)
+   Mobile Responsiveness (Screens under 736px)
    ========================================= */
 
-@media screen and (max-width: 768px) {
-    
-    /* 1. Hide the Hero Image */
-    .interface-image {
-        display: none !important;
+@media screen and (max-width: 736px) {
+
+    /* 1. Mobile Top Bar Layout */
+    #top-bar {
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+        text-align: center;
     }
 
-    /* 2. Expand the Menu to 100% width and center it */
+    .top-bar-left .major {
+        display: block; /* Stacks the major neatly under your name */
+        border-left: none;
+        padding-left: 0;
+        margin-top: 5px;
+    }
+
+    /* 2. Make Room for the Top Bar */
+    #hero-interface {
+        flex-direction: column !important;
+        justify-content: center !important; 
+        padding-top: 100px !important; /* Pushes content down so the top bar doesn't cover your face */
+    }
+
+    /* 3. Bring the Photo Back as a Clean Mobile Avatar */
+    .interface-image {
+        display: block !important;
+        width: 160px !important;
+        height: 160px !important;
+        border-radius: 50% !important; /* Perfect circle */
+        background-position: center !important;
+        -webkit-mask-image: none !important; /* Removes the side-fade mask */
+        mask-image: none !important;
+        margin: 0 auto 20px auto !important; /* Centers it right above the buttons */
+        border: 4px solid #F8B195; /* Peach border ring */
+        box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    /* 4. Center the Menu */
     .interface-menu {
-        width: 100%;
-        padding-right: 0; /* Remove the desktop right-padding */
-        align-items: center; /* Center the buttons horizontally */
+        width: 100% !important;
+        padding-right: 0 !important;
+        align-items: center !important;
     }
 
     .nav-tab {
-        text-align: center; /* Center the button text */
+        text-align: center !important;
     }
 
-    /* 3. Stack the Project Cards vertically */
+    /* 5. Fix Project Cards */
     .project-card {
-        flex-direction: column; /* This moves the image to the top */
-        padding: 20px; /* Slightly tighter padding for small screens */
-        gap: 15px;
+        flex-direction: column !important;
+        padding: 20px !important;
+        gap: 15px !important;
     }
 
-    /* Make both the image and the text take up the full width */
     .project-img,
     .project-info {
-        width: 100%;
+        width: 100% !important;
     }
 
-    /* Optional: Cap the image height so it doesn't consume the entire phone screen */
     .project-img {
-        max-height: 250px; 
+        max-height: 250px !important;
     }
 }
