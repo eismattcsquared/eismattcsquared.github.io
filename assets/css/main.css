@@ -4003,7 +4003,10 @@ html, body {
     background-color: #C06C84 !important; /* Fades to Mauve on hover */
 }
 
-
+/* Hides the mobile mailto button on desktop screens */
+.mobile-btn {
+	display: none !important;
+}
 
 
 #portfolio-content {
@@ -4226,5 +4229,14 @@ html, body {
 
     .project-img {
         max-height: 250px !important;
+    }
+
+	/* 6. Swap Connect Buttons for Mobile UX */
+    .desktop-btn {
+        display: none !important; /* Hides the copy button on phones */
+    }
+
+    .mobile-btn {
+        display: inline-block !important; /* Reveals the mailto button on phones */
     }
 }
