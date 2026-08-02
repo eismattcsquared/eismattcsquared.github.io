@@ -4135,57 +4135,81 @@ html, body {
     transform: translateY(0);
 }
 
+
 /* =========================================
    Mobile Responsiveness (Screens under 736px)
    ========================================= */
 
 @media screen and (max-width: 736px) {
 
-    /* 1. Mobile Top Bar Layout */
+    /* 1. Mobile Top Bar Layout (Side-by-side, no major) */
     #top-bar {
-        flex-direction: column;
-        padding: 15px;
-        gap: 10px;
-        text-align: center;
+        flex-direction: row !important; /* Keeps them side-by-side */
+        justify-content: space-between !important;
+        padding: 15px 20px !important; 
     }
 
     .top-bar-left .major {
-        display: block; /* Stacks the major neatly under your name */
-        border-left: none;
-        padding-left: 0;
-        margin-top: 5px;
+        display: none !important; /* Hides the major */
+    }
+
+    .top-bar-left .name {
+        font-size: 1.1rem !important; /* Slightly scales text down to fit */
+        margin-right: 0 !important;
+    }
+
+    /* Scale the button slightly down so it doesn't clash with your name */
+    .connect-btn {
+        height: 2.2rem !important;
+        line-height: 2.2rem !important;
+        padding: 0 1rem !important;
+        font-size: 0.65rem !important; 
     }
 
     /* 2. Make Room for the Top Bar */
     #hero-interface {
         flex-direction: column !important;
         justify-content: center !important; 
-        padding-top: 100px !important; /* Pushes content down so the top bar doesn't cover your face */
+        padding-top: 60px !important; 
     }
 
-    /* 3. Bring the Photo Back as a Clean Mobile Avatar */
+    /* 3. Bring the Photo Back & Move it ABOVE the Tabs */
     .interface-image {
         display: block !important;
+        order: -1 !important; /* THIS MOVES IT TO THE VERY TOP */
         width: 160px !important;
         height: 160px !important;
         border-radius: 50% !important; /* Perfect circle */
         background-position: center !important;
-        -webkit-mask-image: none !important; /* Removes the side-fade mask */
+        -webkit-mask-image: none !important; 
         mask-image: none !important;
-        margin: 0 auto 20px auto !important; /* Centers it right above the buttons */
+        margin: 0 auto 30px auto !important; /* Spacing between photo and tabs */
         border: 4px solid #F8B195; /* Peach border ring */
         box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     }
 
-    /* 4. Center the Menu */
+    /* 4. Center the Menu & Text */
     .interface-menu {
         width: 100% !important;
         padding-right: 0 !important;
-        align-items: center !important;
+        align-items: center !important; 
+    }
+
+    .nav-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center !important; /* Centers the buttons physically */
+        width: 100%;
     }
 
     .nav-tab {
-        text-align: center !important;
+        text-align: center !important; /* Centers the text inside the buttons */
+        margin: 10px 0 !important;
+    }
+
+    /* Kills the horizontal hover shift on mobile so the text stays perfectly centered */
+    .nav-tab:hover {
+        transform: none !important;
     }
 
     /* 5. Fix Project Cards */
